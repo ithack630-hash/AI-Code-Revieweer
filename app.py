@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 st.title("🛡️ AI Code Reviewer & Security Auditor")
-st.write("Upload your code file or paste code directly to get an instant security, performance, and quality audit powered by Gemini Flash.")
+st.write("Upload your code file or paste code directly to get an instant security, performance, and quality audit powered by Gemini.")
 
 # Sidebar for API Key configuration
 with st.sidebar:
@@ -49,7 +49,7 @@ with col2:
         default=["Security Vulnerabilities", "Syntax & Logic Bugs", "Performance & Memory", "Code Smells & Readability"]
     )
     
-    st.info("⚡ Powered by `gemini-3.8-flash` for rapid analysis.")
+    st.info("⚡ Powered by `gemini-1.5-flash` for high stability and rapid analysis.")
 
 # System Instructions / Prompt definition
 SYSTEM_PROMPT = """
@@ -94,7 +94,7 @@ if st.button("🚀 Run Code Audit", type="primary", use_container_width=True):
                 """
                 
                 response = client.models.generate_content(
-                    model="gemini-3.8-flash",
+                    model="gemini-1.5-flash",
                     contents=user_prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
