@@ -49,7 +49,7 @@ with col2:
         default=["Security Vulnerabilities", "Syntax & Logic Bugs", "Performance & Memory", "Code Smells & Readability"]
     )
     
-    st.info("⚡ Powered by `gemini-2.5-flash` for rapid analysis.")
+    st.info("⚡ Powered by `gemini-3.8-flash` for rapid analysis.")
 
 # System Instructions / Prompt definition
 SYSTEM_PROMPT = """
@@ -94,7 +94,7 @@ if st.button("🚀 Run Code Audit", type="primary", use_container_width=True):
                 """
                 
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash",
+                    model="gemini-3.8-flash",
                     contents=user_prompt,
                     config=types.GenerateContentConfig(
                         system_instruction=SYSTEM_PROMPT,
